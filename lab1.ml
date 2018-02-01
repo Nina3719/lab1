@@ -187,8 +187,11 @@ Exercise 7: Define a recursive function that sums an integer
 list. (What's a sensible return value for the empty list?)
 ......................................................................*)
 
-let sum (lst : int list) : int =
-  failwith "sum not implemented" ;;
+let rec sum (lst : int list) : int =
+  match lst with
+    [] -> 0
+  | h :: t -> h + sum t;;
+;;
 
 (*......................................................................
 Exercise 8: Define a recursive function that returns the maximum
